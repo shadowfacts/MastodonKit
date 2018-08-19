@@ -13,8 +13,10 @@ public class LoginSettings: Codable {
     public let accessToken: String
     /// Access token type.
     public let accessTokenType: String
+    /// The refresh token.
+    public let refreshToken: String
     /// Date when the access token was retrieved.
-    public let createdAt: TimeInterval
+//    public let createdAt: TimeInterval
     /// Access scope.
     private let scope: String
     /// Access scopes.
@@ -27,7 +29,8 @@ public class LoginSettings: Codable {
     private enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"
         case accessTokenType = "token_type"
+        case refreshToken = "refresh_token"
         case scope
-        case createdAt = "created_at"
+//        case createdAt = "created_at"
     }
 }

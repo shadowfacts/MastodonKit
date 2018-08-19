@@ -31,4 +31,17 @@ public struct Login {
         let method = HTTPMethod.post(.parameters(parameters))
         return Request<LoginSettings>(path: "/oauth/token", method: method)
     }
+    
+    public static func authorize(code: String, clientID: String, clientSecret: String) -> Request<LoginSettings> {
+        let parameters = [
+            Parameter(name: "client_id", value: clientID),
+            Parameter(name: "client_secret", value: clientSecret),
+            Parameter(name: "grant_type", value: "authorization_code"),
+            Parameter(name: "code", value: code)
+        ]
+        
+        let method = HTTPMethod.post(.parameters(parameters))
+        return Request<LoginSettings>(path: "/oauth/token", method: method)
+    }
+    
 }
