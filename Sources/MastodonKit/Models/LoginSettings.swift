@@ -14,7 +14,7 @@ public class LoginSettings: Codable {
     /// Access token type.
     public let accessTokenType: String
     /// The refresh token.
-    public let refreshToken: String
+    public let refreshToken: String?
     /// Date when the access token was retrieved.
 //    public let createdAt: TimeInterval
     /// Access scope.

@@ -32,10 +32,11 @@ public struct Login {
         return Request<LoginSettings>(path: "/oauth/token", method: method)
     }
     
-    public static func authorize(code: String, clientID: String, clientSecret: String) -> Request<LoginSettings> {
+    public static func authorize(code: String, clientID: String, clientSecret: String, redirectURI: String) -> Request<LoginSettings> {
         let parameters = [
             Parameter(name: "client_id", value: clientID),
             Parameter(name: "client_secret", value: clientSecret),
+            Parameter(name: "redirect_uri", value: redirectURI),
             Parameter(name: "grant_type", value: "authorization_code"),
             Parameter(name: "code", value: code)
         ]
