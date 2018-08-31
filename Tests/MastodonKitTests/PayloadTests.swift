@@ -44,7 +44,7 @@ class PayloadTests: XCTestCase {
     func testMediaWithValidValue() {
         let imageData = "image data".data(using: .utf8)
 
-        let payload = Payload.media(.jpeg(imageData))
+        let payload = Payload.formData(.jpeg(imageData))
 
         // Items
         XCTAssertNil(payload.items)
@@ -58,7 +58,7 @@ class PayloadTests: XCTestCase {
     }
 
     func testMediaWithNilValue() {
-        let payload = Payload.media(nil)
+        let payload = Payload.formData(nil)
 
         XCTAssertNil(payload.items)
         XCTAssertNil(payload.data)
